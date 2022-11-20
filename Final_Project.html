@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Dancing+Script|Goudy+Bookletter+1911"
+    />
+    <title>Bracken Bricks</title>
+    <style>
+      body {
+        font-family: "Goudy bookletter 1911", Helvetica;
+        background-image: linear-gradient(#a8896c, #7e817b, #a7b99e);
+        color: #cedcc3;
+      }
+      .top_menu {
+        position: fixed;
+        background-color: #f2f9f1;
+        border: linear-gradient(#f2f9f1, #ddeedf, #b6cdbd, #5c715e);
+        width: 100%;
+        height: 40px;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 5;
+      }
+
+      .top_border {
+        background: linear-gradient(#f2f9f1, #ddeedf, #b6cdbd, #5c715e);
+        right: 0;
+        position: fixed;
+        top: 40px;
+        box-shadow: 0px 5px 5px rgba(83, 90, 59, 0.5);
+        height: 7px;
+        width: 100%;
+        margin-bottom: 20px;
+        z-index: 4;
+      }
+      .project {
+        border: 2px solid #535a3b;
+        width: 75%;
+        margin: 60px auto;
+        padding: 10px 40px 30px;
+        text-align: center;
+        background: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/685/original/imageedit_1_6673333340.png?1668898448"),
+          #869260 no-repeat center;
+        z-index: 1;
+        border-radius: 30px;
+        box-shadow: 10px 5px 5px rgba(206, 220, 195, 0.4);
+      }
+      .project2 {
+        border: 2px solid #535a3b;
+        width: 75%;
+        margin: 60px auto;
+        padding: 10px 40px 30px;
+        text-align: center;
+        background: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/753/original/imageedit_4_2014632733.png?1668950942"),
+          #cedcc3 no-repeat center;
+        box-shadow: 10px 5px 5px #5c715e;
+        z-index: 1;
+        border-radius: 30px;
+      }
+      .box1 {
+        display: flex;
+        width: 20%;
+        margin: 0;
+        padding: 0;
+      }
+      .box2 {
+        display: flex;
+        width: 20%;
+        left: -3%;
+        top: 20px;
+        position: fixed;
+        z-index: 6;
+      }
+      .box3 {
+        display: flex;
+        width: 20%;
+        right: -3%;
+        top: 20px;
+        position: fixed;
+        z-index: 6;
+      }
+      ul {
+        list-style: none;
+        text-align: center;
+      }
+      li {
+        display: inline;
+        color: #535a3b;
+      }
+      .li1,
+      .li2,
+      .li3,
+      .li4 {
+        background: transparent;
+        padding: 0px 15px;
+        top: 0;
+        height: 40px;
+        font-size: 16px;
+        text-align: center;
+        width: 100px;
+        transition: all 150ms ease-in-out;
+      }
+      .li1:hover,
+      .li2:hover,
+      .li3:hover,
+      .li4:hover {
+        background: #5c715e;
+        border: 2px solid #535a3b;
+        border-radius: 60%;
+        cursor: pointer;
+      }
+
+      h1 {
+        font-family: "Dancing Script", Helvetica;
+        font-size: 90px;
+        border-top: 2px solid rgba(182, 205, 189, 0.8);
+        border-left: 2px solid rgba(182, 205, 189, 0.8);
+        border-radius: 30px;
+        margin-bottom: -20px;
+        background: rgba(92, 113, 94, 0.2);
+        color: #ddeedf;
+      }
+      .one {
+        margin: 0;
+        padding: 0;
+      }
+      hr {
+        border: 0.5px solid rgba(182, 205, 189, 0.5);
+      }
+      h2 {
+        text-emphasis-style: none;
+        font-size: 30px;
+        margin-bottom: 20px;
+        border-radius: 20px 70px 20px 70px;
+        background: rgba(92, 113, 94, 0.2);
+        color: #ddeedf;
+      }
+      h3 {
+        text-emphasis-style: none;
+        font-size: 25px;
+        max-width: fit-content;
+        margin-bottom: 20px;
+        border-radius: 20px 70px 20px 70px;
+        background: rgba(166, 182, 168, 0.3);
+        color: #a8896c;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 15px;
+      }
+      .wrapper {
+        display: block;
+        margin: 50px 0px;
+        padding: 7px;
+        top: auto;
+        font-size: 20px;
+        background: #5c715e;
+        max-height: fit-content;
+        position: relative;
+        justify-content: center;
+        border-bottom: 2px solid #b6cdbd;
+        border-right: 2px solid #b6cdbd;
+        border-radius: 30px;
+        transition: all 220ms ease-in-out;
+        box-shadow: 10px 5px 5px rgba(83, 90, 59, 0.5);
+      }
+      .wrapper:hover {
+        background: #cedcc3;
+        border-bottom: 3px solid rgba(92, 113, 94, 0.8);
+        border-right: 3px solid rgba(92, 113, 94, 0.8);
+        color: #5c715e;
+        cursor: pointer;
+      }
+      .right {
+        right: 2px;
+        text-align: center;
+        justify-content: center;
+        vertical-align: top;
+        display: inline-block;
+        overflow: auto;
+        height: auto;
+        width: 45%;
+      }
+      .left {
+        left: 2px;
+        text-align: center;
+        display: inline-block;
+        height: auto;
+        width: 45%;
+      }
+      #goldenPothos,
+      #prayerPlant,
+      #monstera,
+      #stringOfHearts {
+        scroll-margin-top: 100px;
+      }
+      a {
+        text-decoration: none;
+        color: #535a3b;
+      }
+      a:hover {
+        color: #ddeedf;
+      }
+
+      #buying:hover {
+        background: rgba(92, 113, 94, 0.4);
+      }
+      #buying {
+        background: rgba(221, 238, 223, 0.5);
+        border-radius: 10px 50px 10px 50px;
+        transition: all 150ms ease-in-out;
+      }
+
+      button {
+        font-size: 18px;
+        background: #f2f9f1;
+        color: #5c715e;
+        border: 2px solid #5c715e;
+        border-radius: 10px;
+        margin: 20px;
+        padding: 12px;
+        box-shadow: 10px 5px 5px rgba(83, 90, 59, 0.5);
+        transition: all 150ms ease-in-out;
+      }
+      button:hover {
+        background: #5c715e;
+        color: #f2f9f1;
+        border: 2px solid #f2f9f1;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box2">
+      <img
+        id="gif2"
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/746/original/gif2.gif?1668946859"
+        alt="Hanging Plant Gif"
+      />
+    </div>
+    <div class="box3">
+      <img
+        id="gif2"
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/746/original/gif2.gif?1668946859"
+        alt="Hanging Plant Gif"
+      />
+    </div>
+    <div class="top_menu">
+      <ul>
+        <li class="li1"><a href="#goldenPothos">Golden Pothos</a></li>
+        <li class="li2"><a href="#prayerPlant">Prayer Plant</a></li>
+        <li class="li3"><a href="#monstera">Monstera Deliciosa</a></li>
+        <li class="li4"><a href="#stringOfHearts">String of Hearts</a></li>
+      </ul>
+    </div>
+    <div class="top_border"></div>
+    <div class="back_img">
+      <div class="project">
+        <h1>Bracken <br />Bricks</h1>
+        <div class="box1">
+          <img
+            id="gif1"
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/740/original/gif1.gif?1668945933"
+            alt="Plant Gif"
+          />
+        </div>
+        <hr class="one" />
+        <h2>
+          <strong>🌱<em>Aloe there!</em></strong> Are you ready to
+          <em>grow?</em> 🌱
+        </h2>
+        <hr />
+        <div class="wrapper" id="goldenPothos">
+          <div class="right">
+            <img
+              id="pothos_img"
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/654/original/golden_pothos.jpeg?1668884499"
+              alt="Image of a Golden Pothos"
+            />
+          </div>
+
+          <div class="left">
+            <p>
+              This gorgeous plant is a ✨Golden Pothos✨ (also known as
+              <em>Devil's Ivy</em>). As one of the easiest plants to care for,
+              the Golden Pothos is a super starter plant, and practically
+              impossible to kill! <br />She is super simple to water, requiring
+              one check a week and only needing water if the top two inches of
+              soil are dry. In terms of light, she isn't fussy, but will
+              <em>thrive</em> in a brighter spot! In the wild it has been known
+              to reach up to <strong>20m</strong> tall!
+            </p>
+          </div>
+        </div>
+        <div class="wrapper" id="prayerPlant">
+          <div class="right">
+            <p>
+              This is a ✨Prayer Plant✨, and is definitely not reccommended for
+              beginners! She can be <em>very</em> dramatic if not given what she
+              wants when she wants it, and therefore is quite hard for a
+              beginner to keep up with!<br />The Prayer Plant is the symbol of
+              new beginnings, coming from the phase 'to turn over a new leaf'.
+              This (and the plant's nickname-the Prayer Plant) are due to the
+              interesting nocturnal behaviour of the leaves. After sundown, the
+              leaves fold upwards, giving the impression of praying hands.
+              Another great thing about the Prayer Plant is that she is
+              non-toxic, meaning any fur babys will be perfectly safe!
+              <br />
+              They require consistent warmth and light, yet this must be
+              indirect. Maranta do better in humid environments, and therefore
+              misting is preferred to watering.
+            </p>
+          </div>
+
+          <div class="left">
+            <img
+              id="prayerplant_img"
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/655/original/prayer_plant.jpeg?1668884560"
+              alt="Image of a Prayer Plant"
+            />
+          </div>
+        </div>
+        <div class="wrapper" id="monstera">
+          <div class="right">
+            <img
+              id="monstera_img"
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/656/original/monstera_deliciosa.jpeg?1668884570"
+              alt="Image of a Monestera Deliciosa"
+            />
+          </div>
+
+          <div class="left">
+            <p>
+              The Monstera comes in many different variations, the one pictured
+              being the ✨Monstera Deliciosa✨. While it is a beautiful,
+              spacious plant, it is important to keep in mind that this plant is
+              toxic to animals and therefore this must be taken into
+              consideration prior to deciding to home one. <br />Monstera can
+              grow up to 70m and can even grow fruit (<em
+                >In the wild of course!</em
+              >)! She prefers to be in humid settings with indirect light, so be
+              sure to keep her happy!
+            </p>
+          </div>
+        </div>
+        <div class="wrapper" id="stringOfHearts">
+          <div class="right">
+            <p>
+              These cute little hangers contain the beautiful ✨String of
+              Hearts✨. This delicate little plants make a cute little hanger,
+              and help bring greenery into your home without feeling too
+              overbearing!<br />While she may seem fragile, this plant is very
+              easy to care for, and even to 🌱propagate🌱! This plant enjoys
+              being in indirect light, as the leaves do have a tendancy to burn!
+            </p>
+          </div>
+
+          <div class="left">
+            <img
+              id="stringofhearts_img"
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/680/original/string-of-hearts.jpeg?1668894202"
+              alt="Image of a String of Hearts"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="back_img">
+      <div class="project2">
+        <h3>🌱About Us ... 🌱</h3>
+        <hr />
+        <div class="wrapper">
+          <p>
+            I <em>adore</em> houseplants, and always enjoy sharing them with my
+            loved ones. I believe there is a form of <em>🌱peace🌱</em> to be
+            found within them, as well as the fact that they are known to help
+            improve both our mental and physical health.<br />I always feel a
+            lot more productive when I'm around my plants, and feel like they
+            help me form a greater connection and appreciation for and towards
+            nature. <br />In terms of the home, it is no secret that house
+            plants provide a more homey, cosy feel, creating a
+            <em>🍄safe space🍄</em> as well as a comforting (air purified!)
+            environment.<br />Please enjoy browsing my
+            (<em>non-exhaustive!</em>) list of favourite plants, sign up to our
+            newsletter, or contact us for any more info! I have also linked my
+            favourite plant shop if you wanted to grab yourself a plant baby
+            too, and start feeling the benefits of a greener atmosphere!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="back_img">
+      <div class="project">
+        <span>
+          <button class="newsletter" onmouseenter="hoverbtns()">
+            Newsletter🌱
+          </button>
+          <button class="contact">🌱Contact Us</button>
+          <br />
+          <a id="buying" href="https://theplantpoint.co.uk/"
+            >🌱Where I buy my plants!🌱</a
+          >
+        </span>
+        <br />
+        <p>
+          ✨Coded by
+          <a href="https://www.instagram.com/bethdoherty99/">Beth Doherty</a> ✨
+          for SheCodes final project
+        </p>
+      </div>
+    </div>
+    <script>
+      let newsletter = document.querySelector(".newsletter");
+      let contact = document.querySelector(".contact");
+      let heading = document.querySelector("h2");
+
+      function nl_signup() {
+        let name = prompt("What is your name?");
+        let email = prompt("What is your email?");
+        let age = prompt("What is your age?");
+        if (age >= 18) {
+          heading.innerHTML = `🍄Hi, ${name}! Welcome to the start of your planting journey!`;
+          alert(
+            `🍄Hi, ${name}, thanks for signing up to our newsletter! We'll be in touch soon!🍄`
+          );
+        } else {
+          alert(
+            `🍄I'm sorry, ${name}, but you aren't quite old enough to sign up yet! Feel free to continue browsing and learning!🌱`
+          );
+        }
+      }
+
+      function contact_us() {
+        let name = prompt("What is your name?");
+        let email = prompt("What is your email?");
+        let query = prompt("What is your query?");
+        alert(
+          `🍄Hi, ${name}! We have recieved your query and will be in touch with you soon! In the meantime, feel free to browse and learn!🌱`
+        );
+      }
+
+      function hoverbtns() {
+        newsletter.innerHTML = "🍄Click Here!🍄";
+      }
+
+      newsletter.addEventListener("click", nl_signup);
+      newsletter.addEventListener("mouseover", function () {
+        this.textContent = "🍄Click Here!🍄";
+      });
+      newsletter.addEventListener("mouseout", function () {
+        this.textContent = "Newsletter🌱";
+      });
+      contact.addEventListener("mouseover", function () {
+        this.textContent = "🍄Click Here!🍄";
+      });
+      contact.addEventListener("mouseout", function () {
+        this.textContent = "🌱Contact Us";
+      });
+      newsletter.addEventListener("", hoverbtns);
+      contact.addEventListener("click", contact_us);
+    </script>
+  </body>
+</html>
